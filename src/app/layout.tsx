@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: `${APP_NAME}`,
   description: `${APP_DESCRIPTION}`,
 };
-
+//test commit
 export default function RootLayout({
   children,
 }: Readonly<{
