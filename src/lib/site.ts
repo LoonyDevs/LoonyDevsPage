@@ -6,7 +6,7 @@ export const APP_DESCRIPTION =
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://loonydevs.com";
 
-export const SUPPORT_EMAIL = "LoonyDevs@gmail.com";
+export const SUPPORT_EMAIL = "Support@LoonyDevs.com";
 export const MAILTO = `mailto:${SUPPORT_EMAIL}`;
 export const GITHUB_URL = "https://github.com/LoonyDevs";
 
