@@ -2,7 +2,20 @@
 
 export const APP_NAME = "Loony Devs";
 export const APP_DESCRIPTION =
-  "Loony Devs is a small team of developers building iOS and web apps, with games and game jams on the side.";
+  "Loony Devs is a small team of iOS and web app developers. We build our own apps — Pivot Sports, Tipzy, Guess What — plus games and game jams on the side.";
+
+// google ignores this, but Bing and some directories still glance at it
+export const KEYWORDS = [
+  "Loony Devs",
+  "iOS app developer",
+  "web app developer",
+  "indie app studio",
+  "app development studio",
+  "Pivot Sports",
+  "Tipzy tip calculator",
+  "Guess What APOD",
+  "Guess What Pokemon",
+];
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://loonydevs.com";
 
