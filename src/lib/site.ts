@@ -15,6 +15,7 @@ export const KEYWORDS = [
   "Tipzy tip calculator",
   "Guess What APOD",
   "Guess What Pokemon",
+  "Vignette shared camera",
 ];
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://loonydevs.com";

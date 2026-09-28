@@ -67,15 +67,21 @@ export const PROJECTS: Project[] = [
     tags: ["iOS"],
   },
   {
-    name: "Vignette — Disposable Camera",
+    name: "Vignette — Shared Camera",
     slug: "vignette",
     category: "Apps",
-    tagline: "A camera that makes you wait for the photos.",
+    tagline: "A shared disposable camera for group events.",
     description:
-      "Shoot now, see them later. A disposable-camera experience that brings back the anticipation of film.",
-    status: "Beta",
+      "Everyone at the event shoots with a limited roll. Photos stay hidden until it's over, then unlock together in one shared gallery — for weddings, trips, and reunions.",
+    status: "Live",
     year: "2026",
     icon: true,
+    links: [
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/vignette-shared-camera/id6792618434",
+      },
+    ],
     tags: ["iOS"],
   },
   {
