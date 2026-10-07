@@ -95,12 +95,13 @@ export const PROJECTS: Project[] = [
     year: "2025",
     icon: true,
     links: [
+      { label: "Website", href: "https://guesswhat-space.vercel.app/" },
       {
         label: "App Store",
         href: "https://apps.apple.com/us/app/guess-what-apod-edition/id6747625819",
       },
     ],
-    tags: ["iOS", "Web soon"],
+    tags: ["iOS", "Web"],
   },
   {
     name: "Guess What — Pokémon Edition",

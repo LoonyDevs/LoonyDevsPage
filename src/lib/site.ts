@@ -35,6 +35,7 @@ export const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
+  { label: "Tools", href: "/tools" },
 ];
 
 // the 3 things in the about section
