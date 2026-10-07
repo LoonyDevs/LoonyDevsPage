@@ -32,9 +32,9 @@ export const FEATURE_IMAGE: string | null = null;
 
 // nav, all anchor links
 export const NAV_LINKS: { label: string; href: string }[] = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
   { label: "Tools", href: "/tools" },
 ];
 

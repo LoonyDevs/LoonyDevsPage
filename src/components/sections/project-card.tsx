@@ -16,6 +16,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <Image
               width={100}
               height={100}
+              loading="eager"
               src={projectAsset(project.slug, "poster.jpg")}
               alt={project.name}
               className="absolute inset-0 h-full w-full object-cover"
@@ -24,6 +25,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <Image
               width={100}
               height={100}
+              loading="eager"
               src={projectAsset(project.slug, "icon.jpg")}
               alt={`${project.name} app icon`}
               className="h-[46%] w-auto rounded-[22%] shadow-lg ring-1 ring-black/5"

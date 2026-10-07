@@ -12,6 +12,7 @@ import {
   SUPPORT_EMAIL,
 } from "@/lib/site";
 import "../styles/globals.css";
+import SiteHeader from "@/components/layout/site-header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -99,6 +100,7 @@ export default function RootLayout({
       className={`${inter.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <SiteHeader />
         {children}
         <script
           type="application/ld+json"
