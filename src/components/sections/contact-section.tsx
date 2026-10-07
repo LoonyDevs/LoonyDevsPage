@@ -10,7 +10,7 @@ const ContactSection = () => {
         <SectionLabel>Contact</SectionLabel>
         <a
           href={MAILTO}
-          className="mt-5 block font-heading text-2xl tracking-tight text-primary break-words transition-colors hover:text-primary/70 sm:text-4xl"
+          className="mt-5 block font-heading text-2xl tracking-tight text-primary wrap-break-word transition-colors hover:text-primary/70 sm:text-4xl"
         >
           {SUPPORT_EMAIL}
         </a>

@@ -3,6 +3,7 @@
 import { SectionLabel } from "@/components/ui/section-label";
 import { TextLink } from "@/components/ui/text-link";
 import { APP_NAME, FEATURE_IMAGE } from "@/lib/site";
+import Image from "next/image";
 
 const Intro = () => {
   return (
@@ -13,8 +14,8 @@ const Intro = () => {
           We build iOS and web apps.
         </h1>
         <p className="mx-auto mt-6 max-w-lg text-base text-muted-foreground sm:text-lg">
-          {APP_NAME} is a small team making our own products. Several are live on
-          the App Store, with more in progress.
+          {APP_NAME} is a small team making our own products. Several are live
+          on the App Store, with more in progress.
         </p>
 
         <div className="mt-9 flex flex-wrap justify-center gap-x-8 gap-y-3">
@@ -26,9 +27,10 @@ const Intro = () => {
       </div>
 
       {FEATURE_IMAGE ? (
-        <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-y border-border px-6 sm:aspect-[21/9]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+        <div className="relative flex aspect-16/10 items-center justify-center overflow-hidden border-y border-border px-6 sm:aspect-21/9">
+          <Image
+            width={100}
+            height={100}
             src={FEATURE_IMAGE}
             alt=""
             className="absolute inset-0 h-full w-full object-cover"

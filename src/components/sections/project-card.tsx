@@ -1,7 +1,7 @@
 // one app card. poster on top, info below, more shows on hover
 
 import { ArrowUpRight } from "lucide-react";
-
+import Image from "next/image";
 import { projectAsset, type Project } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 
@@ -9,19 +9,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
   const primary = project.links?.[0];
 
   return (
-    <div className="group relative w-[76vw] shrink-0 snap-start transition-transform duration-300 ease-out sm:w-[340px] lg:hover:z-10 lg:hover:scale-[1.04]">
+    <div className="group relative w-[76vw] shrink-0 snap-start transition-transform duration-300 ease-out sm:w-85 lg:hover:z-10 lg:hover:scale-[1.04]">
       <div className="overflow-hidden rounded-xl border border-border bg-card transition-colors duration-300 group-hover:border-primary/50 group-hover:shadow-xl">
         <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-accent">
           {project.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
+              width={100}
+              height={100}
               src={projectAsset(project.slug, "poster.jpg")}
               alt={project.name}
               className="absolute inset-0 h-full w-full object-cover"
             />
           ) : project.icon ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
+              width={100}
+              height={100}
               src={projectAsset(project.slug, "icon.jpg")}
               alt={`${project.name} app icon`}
               className="h-[46%] w-auto rounded-[22%] shadow-lg ring-1 ring-black/5"
@@ -60,7 +62,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
           >
             {project.status}
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">{project.tagline}</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {project.tagline}
+          </p>
 
           {/* shows on hover */}
           <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-hover:grid-rows-[1fr]">
