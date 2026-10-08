@@ -27,7 +27,7 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: APP_NAME,
+    default: `${APP_NAME} · iOS & web apps`,
     template: `%s · ${APP_NAME}`,
   },
   description: APP_DESCRIPTION,
@@ -63,6 +63,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: APP_NAME,
+  alternateName: ["LoonyDevs", "LoonyDevs.com"],
   url: SITE_URL,
   logo: `${SITE_URL}${LOGO_SRC}`,
   description: APP_DESCRIPTION,
