@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { Copy } from "lucide-react";
+import { Copy, Download, RefreshCw, Fingerprint } from "lucide-react";
 import { toast } from "sonner";
 
 const UUIDGenerator = () => {
@@ -52,25 +52,47 @@ const UUIDGenerator = () => {
 
   return (
     <div className="flex flex-1 items-center justify-center mb-50">
-      <Card className="w-full max-w-lg">
+      <Card className="w-full max-w-lg shadow-sm">
         <CardHeader>
-          <CardTitle>UUID Generator</CardTitle>
-          <CardDescription>Create Version 4 UUID</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <Button className="rounded-2xl" onClick={generateUUID}>
-              Generate UUID
-            </Button>
+          <div className="flex items-center gap-3">
+            <div className="rounded-xl bg-primary/10 p-3">
+              <Fingerprint className="size-6 text-primary" />
+            </div>
             <div>
-              <span className="text-lg font-bold">{uuid}</span>
+              <CardTitle>UUID Generator</CardTitle>
+              <CardDescription className="mt-1">
+                Generate a random Version 4 UUID
+              </CardDescription>
             </div>
           </div>
-          <div className="flex justify-center gap-4 mt-5">
-            <Button className="rounded-2xl" onClick={copyToClipboard}>
-              <Copy /> Copy
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="rounded-lg border bg-muted/50 p-4">
+            <div className="mb-3 flex items-center justify-between">
+              <span className="text-xs font-medium text-muted-foreground">
+                GENERATED UUID
+              </span>
+              <span className="rounded-md bg-background px-2 py-1 text-xs">
+                v4
+              </span>
+            </div>
+            <p className="text-center font-mono text-sm font-medium">{uuid}</p>
+          </div>
+          <Button className="w-full" onClick={generateUUID}>
+            <RefreshCw />
+            Generate New UUID
+          </Button>
+          <div className="grid grid-cols-2 gap-3">
+            <Button
+              variant="outline"
+              onClick={copyToClipboard}
+              disabled={!uuid}
+            >
+              <Copy />
+              Copy
             </Button>
-            <Button className="rounded-2xl" onClick={downloadUUID}>
+            <Button variant="outline" onClick={downloadUUID} disabled={!uuid}>
+              <Download />
               Download
             </Button>
           </div>
