@@ -52,7 +52,7 @@ const UUIDGenerator = () => {
 
   return (
     <div className="flex flex-1 items-center justify-center mb-50">
-      <Card className="w-full max-w-lg shadow-sm">
+      <Card className="w-full max-w-lg">
         <CardHeader>
           <div className="flex items-center gap-3">
             <div className="rounded-xl bg-primary/10 p-3">
