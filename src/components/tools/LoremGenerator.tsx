@@ -21,7 +21,7 @@ import { Button } from "../ui/button";
 import { Copy, RefreshCw, TextInitial } from "lucide-react";
 import { LoremIpsum } from "lorem-ipsum";
 import { toast } from "sonner";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const options = [
   { label: "Words", value: "words" },
