@@ -20,6 +20,8 @@ import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Copy, RefreshCw, TextInitial } from "lucide-react";
 import { LoremIpsum } from "lorem-ipsum";
+import { toast } from "sonner";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const options = [
   { label: "Words", value: "words" },
@@ -30,16 +32,41 @@ const options = [
 const LoremGenerator = () => {
   const [length, setLength] = useState<number>(5);
   const [lengthInput, setLengthInput] = useState("5");
-  const [selectedDropdown, setSelectedDropdown] = useState("");
-  const [outputResult, setOutputResutl] = useState("");
+  const [selectedDropdown, setSelectedDropdown] = useState("words");
+  const [outputResult, setOutputResult] = useState("");
 
   // Function to generate lorem
   const generateLorem = () => {
     const lorem = new LoremIpsum();
+    let text = "";
 
-    const words = lorem.generateWords(length);
-    const paragraph = lorem.generateParagraphs(length);
-    const sentence = lorem.generateSentences(length);
+    switch (selectedDropdown) {
+      case "words":
+        text = lorem.generateWords(length);
+        break;
+
+      case "paragraphs":
+        text = lorem.generateParagraphs(length);
+        break;
+
+      case "sentences":
+        text = lorem.generateSentences(length);
+        break;
+    }
+    setOutputResult(text);
+  };
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      generateLorem();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  // Copy to clipboard function
+  const copyToClipboard = async () => {
+    await navigator.clipboard.writeText(outputResult);
+    toast.success("Copied to clipboard!", { position: "bottom-center" });
   };
 
   return (
@@ -67,14 +94,17 @@ const LoremGenerator = () => {
               <Button
                 variant={"outline"}
                 className="rounded-2xl bg-background px-2 py-1 text-xs"
+                onClick={copyToClipboard}
               >
                 <Copy />
                 Copy
               </Button>
             </div>
-            <p className="text-center font-mono text-sm font-medium">
-              {outputResult}
-            </p>
+            <ScrollArea className="h-70 rounded-md p-4">
+              <p className="whitespace-pre-line text-center font-mono text-sm font-medium">
+                {outputResult}
+              </p>
+            </ScrollArea>
           </div>
           <div className="grid grid-cols-3 gap-3">
             <Input
@@ -102,7 +132,7 @@ const LoremGenerator = () => {
               }}
             />
 
-            <Select defaultValue="words">
+            <Select defaultValue="words" onValueChange={setSelectedDropdown}>
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
@@ -117,7 +147,7 @@ const LoremGenerator = () => {
               </SelectContent>
             </Select>
 
-            <Button className="w-full">
+            <Button onClick={generateLorem} className="w-full">
               <RefreshCw />
               Generate Text
             </Button>
