@@ -8,10 +8,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useState } from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { TypeOutline } from "lucide-react";
+import { Separator } from "../ui/separator";
+import { FieldLabel } from "../ui/field";
+import { Input } from "../ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const CharacterCounter = () => {
+  const [inputText, setInputText] = useState("");
+
+  const characterCount = inputText.length;
+  const wordCount =
+    inputText.trim() === "" ? 0 : inputText.trim().split(/\s+/).length;
+
   return (
     <div className="flex flex-1 items-center justify-center mb-50">
       <Card className="w-full max-w-lg">
@@ -29,7 +38,35 @@ const CharacterCounter = () => {
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="rounded-lg border bg-muted/50 p-4">test</div>
+          <Textarea
+            className="h-70"
+            placeholder="Paste your text here"
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+          />
+          <Separator className="my-5" />
+          <div className="rounded-lg border bg-muted/50 p-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <FieldLabel htmlFor="output-characters">Characters</FieldLabel>
+                <Input
+                  id="output-characters"
+                  type="text"
+                  readOnly
+                  value={characterCount}
+                />
+              </div>
+              <div className="space-y-2">
+                <FieldLabel htmlFor="output-words">Words</FieldLabel>
+                <Input
+                  id="output-words"
+                  type="text"
+                  readOnly
+                  value={wordCount}
+                />
+              </div>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>
