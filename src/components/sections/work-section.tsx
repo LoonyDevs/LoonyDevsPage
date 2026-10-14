@@ -29,7 +29,7 @@ const WorkSection = () => {
               {category}
             </h3>
 
-            <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pt-2 pb-10 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-5 lg:px-[max(1.5rem,calc((100%-72rem)/2))] [&::-webkit-scrollbar]:hidden">
+            <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pt-2 pb-10 [-ms-overflow-style:none] scrollbar-none sm:gap-5 lg:px-[max(1.5rem,calc((100%-72rem)/2))] [&::-webkit-scrollbar]:hidden">
               {projects.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}

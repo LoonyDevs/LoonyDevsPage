@@ -12,16 +12,20 @@ import {
   SUPPORT_EMAIL,
 } from "@/lib/site";
 import "../styles/globals.css";
+import SiteHeader from "@/components/layout/site-header";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  preload: false,
 });
 
 const newsreader = Newsreader({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-heading",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -97,9 +101,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <SiteHeader />
         {children}
         <script
           type="application/ld+json"
@@ -114,6 +120,7 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+        <Toaster />
       </body>
     </html>
   );
