@@ -85,6 +85,19 @@ export const PROJECTS: Project[] = [
     tags: ["iOS"],
   },
   {
+    name: "Fly My Kite",
+    slug: "fly-my-kite",
+    category: "Apps",
+    tagline: "A clear YES or NOT YET for kite flying.",
+    description:
+      "Live wind, hour-by-hour forecasts and the best window of the day to fly, with optional alerts when the wind looks good.",
+    status: "Live",
+    year: "2026",
+    icon: true,
+    links: [{ label: "Learn more", href: "/fly-my-kite" }],
+    tags: ["iOS"],
+  },
+  {
     name: "Guess What — APOD Edition",
     slug: "guess-what-apod",
     category: "Games",
