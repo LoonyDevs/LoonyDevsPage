@@ -90,7 +90,7 @@ const PasswordGenerator = () => {
   };
 
   return (
-    <div className="flex flex-1 items-center justify-center mb-50">
+    <div className="flex justify-center px-6 pt-12 sm:pt-20">
       <Card className="w-full max-w-lg">
         <CardHeader>
           <div className="flex items-center gap-3">
@@ -98,7 +98,7 @@ const PasswordGenerator = () => {
               <KeyRound className="size-6 text-primary" />
             </div>
             <div>
-              <CardTitle>Password Generator</CardTitle>
+              <CardTitle as="h1">Password Generator</CardTitle>
               <CardDescription className="mt-1">
                 Create Secure Passwords
               </CardDescription>
@@ -203,7 +203,8 @@ const PasswordGenerator = () => {
                   <Copy /> Copy
                 </Button>
                 <Button onClick={generateRandomPassword}>
-                  <RefreshCw /> Generate New Password
+                  <RefreshCw /> Generate New
+                  <span className="hidden sm:inline"> Password</span>
                 </Button>
               </div>
             </TabsContent>
@@ -268,7 +269,8 @@ const PasswordGenerator = () => {
                   <Copy /> Copy
                 </Button>
                 <Button onClick={generateRandomPin}>
-                  <RefreshCw /> Generate New Password
+                  <RefreshCw /> Generate New
+                  <span className="hidden sm:inline"> Password</span>
                 </Button>
               </div>
             </TabsContent>

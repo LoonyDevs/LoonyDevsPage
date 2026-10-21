@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 
+import { shareMetadata } from "@/lib/metadata";
 import { PROJECTS } from "@/lib/projects";
 import {
   APP_DESCRIPTION,
@@ -41,18 +42,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   icons: { icon: "/icon.png", apple: "/icon.png" },
-  openGraph: {
+  ...shareMetadata({
     title: APP_NAME,
     description: APP_DESCRIPTION,
-    url: SITE_URL,
-    siteName: APP_NAME,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: APP_NAME,
-    description: APP_DESCRIPTION,
-  },
+    path: "/",
+  }),
   // paste the google search console token here to verify the site
   // verification: { google: "..." },
 };

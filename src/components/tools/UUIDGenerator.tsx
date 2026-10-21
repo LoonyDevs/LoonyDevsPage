@@ -51,7 +51,7 @@ const UUIDGenerator = () => {
   };
 
   return (
-    <div className="flex flex-1 items-center justify-center mb-50">
+    <div className="flex justify-center px-6 pt-12 sm:pt-20">
       <Card className="w-full max-w-lg">
         <CardHeader>
           <div className="flex items-center gap-3">
@@ -59,7 +59,7 @@ const UUIDGenerator = () => {
               <Fingerprint className="size-6 text-primary" />
             </div>
             <div>
-              <CardTitle>UUID Generator</CardTitle>
+              <CardTitle as="h1">UUID Generator</CardTitle>
               <CardDescription className="mt-1">
                 Generate a random Version 4 UUID
               </CardDescription>
