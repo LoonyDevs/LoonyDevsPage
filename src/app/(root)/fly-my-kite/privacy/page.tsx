@@ -4,13 +4,28 @@ import type { Metadata } from "next";
 
 import SiteFooter from "@/components/layout/site-footer";
 import { SectionLabel } from "@/components/ui/section-label";
-import { MAILTO, SUPPORT_EMAIL } from "@/lib/site";
+import { shareMetadata, type ShareImage } from "@/lib/metadata";
+import { APP_NAME, MAILTO, SUPPORT_EMAIL } from "@/lib/site";
+
+const KITE_SHARE_IMAGE: ShareImage = {
+  url: "/projects/fly-my-kite/share.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Fly My Kite app screens showing a YES answer and wind conditions",
+};
 
 export const metadata: Metadata = {
   title: "Fly My Kite Privacy Policy",
   description:
     "How Fly My Kite handles your location, settings and notification data.",
   alternates: { canonical: "/fly-my-kite/privacy" },
+  ...shareMetadata({
+    title: `Fly My Kite Privacy Policy · ${APP_NAME}`,
+    description:
+      "How Fly My Kite handles your location, settings and notification data.",
+    path: "/fly-my-kite/privacy",
+    image: KITE_SHARE_IMAGE,
+  }),
 };
 
 const EFFECTIVE_DATE = "October 21, 2026";

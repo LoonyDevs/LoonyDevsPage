@@ -7,15 +7,30 @@ import SiteFooter from "@/components/layout/site-footer";
 import { SectionLabel } from "@/components/ui/section-label";
 import { TextLink } from "@/components/ui/text-link";
 import { projectAsset } from "@/lib/projects";
-import { MAILTO, SUPPORT_EMAIL } from "@/lib/site";
+import { shareMetadata, type ShareImage } from "@/lib/metadata";
+import { APP_NAME, MAILTO, SUPPORT_EMAIL } from "@/lib/site";
 
 const SLUG = "fly-my-kite";
+
+const KITE_SHARE_IMAGE: ShareImage = {
+  url: "/projects/fly-my-kite/share.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Fly My Kite app screens showing a YES answer and wind conditions",
+};
 
 export const metadata: Metadata = {
   title: "Fly My Kite",
   description:
     "Fly My Kite gives you a clear YES or NOT YET for kite flying, with live wind, an hour-by-hour forecast and the best window of the day to fly.",
   alternates: { canonical: "/fly-my-kite" },
+  ...shareMetadata({
+    title: `Fly My Kite · ${APP_NAME}`,
+    description:
+      "Fly My Kite gives you a clear YES or NOT YET for kite flying, with live wind, an hour-by-hour forecast and the best window of the day to fly.",
+    path: "/fly-my-kite",
+    image: KITE_SHARE_IMAGE,
+  }),
 };
 
 const FEATURES = [

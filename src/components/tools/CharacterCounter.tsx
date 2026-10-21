@@ -22,7 +22,7 @@ const CharacterCounter = () => {
     inputText.trim() === "" ? 0 : inputText.trim().split(/\s+/).length;
 
   return (
-    <div className="flex flex-1 items-center justify-center mb-50">
+    <div className="flex justify-center px-6 pt-12 sm:pt-20">
       <Card className="w-full max-w-lg">
         <CardHeader>
           <div className="flex items-center gap-3">
@@ -30,7 +30,7 @@ const CharacterCounter = () => {
               <TypeOutline className="size-6 text-primary" />
             </div>
             <div>
-              <CardTitle>Character Counter</CardTitle>
+              <CardTitle as="h1">Character Counter</CardTitle>
               <CardDescription className="mt-1">
                 Character counter to count characters and words.
               </CardDescription>
