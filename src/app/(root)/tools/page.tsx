@@ -1,7 +1,24 @@
+import type { Metadata } from "next";
+
+import SiteFooter from "@/components/layout/site-footer";
 import ToolsHome from "@/components/tools/ToolsHome";
 
+export const metadata: Metadata = {
+  title: "Tools",
+  description:
+    "Free browser-based tools from Loony Devs: UUID and password generators, a salary calculator, a character counter and more.",
+  alternates: { canonical: "/tools" },
+};
+
 const ToolsPage = () => {
-  return <ToolsHome />;
+  return (
+    <div className="flex min-h-full flex-col">
+      <main className="flex-1">
+        <ToolsHome />
+      </main>
+      <SiteFooter />
+    </div>
+  );
 };
 
 export default ToolsPage;
