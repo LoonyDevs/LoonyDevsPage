@@ -1,6 +1,6 @@
 // bottom bar, copyright + links
 
-import { APP_NAME, GITHUB_URL, NAV_LINKS } from "@/lib/site";
+import { APP_NAME, GITHUB_URL, LOCATION, NAV_LINKS } from "@/lib/site";
 
 const SiteFooter = () => {
   return (
@@ -9,9 +9,11 @@ const SiteFooter = () => {
         <p>
           &copy; {new Date().getFullYear()}{" "}
           <span className="font-heading text-primary">{APP_NAME}</span>
+          {" · "}
+          Remote team in {LOCATION.city}, {LOCATION.regionCode}
         </p>
 
-        <nav className="flex gap-6">
+        <nav className="flex flex-wrap gap-x-6 gap-y-2">
           {NAV_LINKS.map((item) => (
             <a
               key={item.href}

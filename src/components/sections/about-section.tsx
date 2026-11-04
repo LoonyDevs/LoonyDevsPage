@@ -1,7 +1,8 @@
 // about blurb + the what-we-do list
 
 import { SectionLabel } from "@/components/ui/section-label";
-import { SERVICES } from "@/lib/site";
+import { TextLink } from "@/components/ui/text-link";
+import { LOCATION, SERVICES } from "@/lib/site";
 
 const AboutSection = () => {
   return (
@@ -26,6 +27,14 @@ const AboutSection = () => {
             <p>
               The apps above are live on the App Store, with more in progress.
               We also build games and take part in game jams.
+            </p>
+            <p>
+              We work remotely from {LOCATION.city}, {LOCATION.regionCode}, and
+              build web apps and e-commerce sites for businesses across{" "}
+              {LOCATION.metro} and beyond.
+            </p>
+            <p>
+              <TextLink href="/services">See our services</TextLink>
             </p>
           </div>
         </div>
