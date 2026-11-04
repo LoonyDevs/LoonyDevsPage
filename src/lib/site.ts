@@ -16,7 +16,30 @@ export const KEYWORDS = [
   "Guess What APOD",
   "Guess What Pokemon",
   "Vignette shared camera",
+  "St. Pete app developer",
+  "St. Petersburg app developer",
+  "St. Pete iOS developer",
+  "St. Petersburg Florida app development",
+  "St. Pete web developer",
+  "St. Pete web app developer",
+  "St. Pete e-commerce developer",
+  "St. Petersburg ecommerce website development",
+  "Tampa Bay app developer",
+  "Tampa Bay web developer",
+  "Tampa Bay e-commerce developer",
 ];
+
+// where we're based. city level only, no street address, so it's safe to publish
+export const LOCATION = {
+  city: "St. Petersburg",
+  region: "Florida",
+  regionCode: "FL",
+  country: "US",
+  county: "Pinellas County",
+  metro: "Tampa Bay",
+  latitude: 27.7676,
+  longitude: -82.6403,
+};
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://loonydevs.com";
 
@@ -34,6 +57,7 @@ export const FEATURE_IMAGE: string | null = null;
 export const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Work", href: "/#work" },
   { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
   { label: "Contact", href: "/#contact" },
   { label: "Tools", href: "/tools" },
 ];
@@ -44,6 +68,10 @@ export const SERVICES: { title: string; description: string }[] = [
   {
     title: "Web apps",
     description: "The same apps on the web, one shared account.",
+  },
+  {
+    title: "E-commerce",
+    description: "Online stores and storefronts for local businesses.",
   },
   { title: "Games", description: "Side projects and game jams." },
 ];

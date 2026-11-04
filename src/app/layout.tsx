@@ -8,6 +8,7 @@ import {
   APP_NAME,
   GITHUB_URL,
   KEYWORDS,
+  LOCATION,
   LOGO_SRC,
   SITE_URL,
   SUPPORT_EMAIL,
@@ -47,6 +48,13 @@ export const metadata: Metadata = {
     description: APP_DESCRIPTION,
     path: "/",
   }),
+  // old-school geo tags, bing and some directories still read these
+  other: {
+    "geo.region": `${LOCATION.country}-${LOCATION.regionCode}`,
+    "geo.placename": `${LOCATION.city}, ${LOCATION.region}`,
+    "geo.position": `${LOCATION.latitude};${LOCATION.longitude}`,
+    ICBM: `${LOCATION.latitude}, ${LOCATION.longitude}`,
+  },
   // paste the google search console token here to verify the site
   // verification: { google: "..." },
 };
@@ -56,11 +64,35 @@ export const viewport: Viewport = {
   themeColor: "#6D28D9",
 };
 
-// helps google figure out what loony devs is
+// helps google figure out what loony devs is, and that we're a St. Pete business
+// so we can show up for nearby searches
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   name: APP_NAME,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: LOCATION.city,
+    addressRegion: LOCATION.regionCode,
+    addressCountry: LOCATION.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: LOCATION.latitude,
+    longitude: LOCATION.longitude,
+  },
+  serviceType: [
+    "iOS app development",
+    "Web development",
+    "Web app development",
+    "E-commerce development",
+  ],
+  areaServed: [
+    { "@type": "City", name: LOCATION.city },
+    { "@type": "AdministrativeArea", name: LOCATION.county },
+    { "@type": "AdministrativeArea", name: LOCATION.metro },
+    { "@type": "State", name: LOCATION.region },
+  ],
   alternateName: ["LoonyDevs", "LoonyDevs.com"],
   url: SITE_URL,
   logo: `${SITE_URL}${LOGO_SRC}`,
